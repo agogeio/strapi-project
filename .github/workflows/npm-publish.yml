@@ -42,6 +42,4 @@ jobs:
           cd /home/github/strapi-project 
           git pull
           npm install
-          pm2 start npm --name app -- run start
-          
-# npm run build
+          pm2 start server.js
