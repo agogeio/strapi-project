@@ -38,8 +38,9 @@ jobs:
         username: ${{ secrets.USERNAME }}
         host: ${{ secrets.VM_IP }}
         script: |
-          pm2 delete all
-          cd /home/github/strapi-project 
+          pm2 delete strapi_server.js
+          cd /home/github/strapi 
           git pull
           npm install
-          pm2 start server.js
+          npm run build
+          pm2 start strapi_server.js --watch
